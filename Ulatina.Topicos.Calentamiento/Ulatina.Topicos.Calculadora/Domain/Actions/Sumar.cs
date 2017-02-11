@@ -14,7 +14,10 @@ namespace Ulatina.Topicos.Calculadora.Domain.Actions
         /// <returns>Resultado de aplicar el operardor a cada uno de los terminos de la lista</returns>
         public double realizarOperacion(IEnumerable<double> lalista)
         {
-            return 0;
+            double elresultado=0;
+            Specification.Sume laEspecificacion = new Domain.Specification.Sume();
+            elresultado = laEspecificacion.CalcularResultado(lalista);
+            return elresultado;
 
         }
     }

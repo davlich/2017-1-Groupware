@@ -73,13 +73,16 @@
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>
     <Compile Include="Domain\Interfaces\IService1.cs" />
+    <Compile Include="Domain\Specification\Divide.cs" />
+    <Compile Include="Domain\Specification\Multiplique.cs" />
+    <Compile Include="Domain\Specification\Reste.cs" />
+    <Compile Include="Domain\Specification\Sume.cs" />
+    <Compile Include="Domain\Validations\RealizarValidaciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Domain\Enumerated\" />
-    <Folder Include="Domain\Specification\" />
-    <Folder Include="Domain\Validations\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Web.Debug.config">
