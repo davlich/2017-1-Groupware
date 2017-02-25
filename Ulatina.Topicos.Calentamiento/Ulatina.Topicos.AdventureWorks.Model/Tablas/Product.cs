@@ -18,8 +18,8 @@ namespace Ulatina.Topicos.AdventureWorks.Model
                 {
                     if (double.TryParse(Size, out laConversion))
                     {
-                        lasPulgadas = laConversion / 2.54;
-                        elResultado = string.Format("{0} in.", lasPulgadas.ToString());
+                        lasPulgadas = Math.Round(laConversion / 2.54,2);
+                        elResultado = string.Format("{0} in", lasPulgadas.ToString());
 
                     }
                     else
@@ -30,5 +30,30 @@ namespace Ulatina.Topicos.AdventureWorks.Model
                 return elResultado;
             }                 
                 }
+
+        public string weighkilos
+        {
+            get
+            {
+                string elResultado = string.Empty;
+                decimal? losKilos;
+                double laConversion = 0;
+
+                switch (WeightUnitMeasureCode) {
+                    case "": elResultado = Weight.ToString();break;
+                    case "G":
+                        losKilos = Weight / 1000;
+                        elResultado = string.Format("{0} kgs", losKilos.ToString());break;
+                    case "LB":
+                        losKilos = Weight / (decimal)2.20462;
+                        elResultado = string.Format("{0} kgs", losKilos.ToString()); break;
+                    default:
+                        elResultado = "unidad desconocida";break;
+                }
+              
+                return elResultado;
+            }
+        }
     }
+
 }
